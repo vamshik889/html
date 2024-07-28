@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+    <body>
+
+    <form>
+     <h1>Comprehensive Registration form</h1>
+    
+        <label for="full-name"> Full Name: </label>
+        <input type="text" id="full-name">
+        <br><br>
+
+        <label for="email">Email:</label>
+        <input type="email" id = "email" name="email" required>
+        <br><br>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" maxlength="20" required>
+        <br><br>
+
+        <label for="confirm-password">Confirm Password:</label>
+        <input type="password" id="confirm-password" name="confirm password" maxlength="20" required>
+        <br><br>
+
+        <label for="birth-date">Birth Date:</label>
+        <input type="date" id="birth-date" name="birth date" max="2006-07-26" required>
+        <br><br>
+
+        <select>
+            <option value = > --Select your gender--</option>
+            <option value = > Male</option>
+            <option value = > Female</option>
+            <option value = > Other</option>
+        </select>
+        <br><br>
+
+        <input type="radio"> <sub>Free</sub></input>
+        <input type="radio"> <sub>Basic</sub></input>
+        <input type="radio"> <sub>Premium</sub></input>
+
+        <br><br>
+        <h2>Hobbies:</h2>
+        <input type="checkbox" >Reading </input>
+        <br>
+        <input type="checkbox"> Travelling </input>
+        <br>
+        <input type="checkbox"> Coding </input>
+        <br>
+        <input type="checkbox"> Sports </input>
+        <br>
+        <label for="profile-picture" >Upload your profile picture</label>
+        <input type="file" id="profile-picture" accept="image/jpg, image/png" required><br>
+        <button type="submit">Submit</button>
+        <br><br>
+        <textarea id="story" name="story" rows="5" cols="100" placeholder="Description" required></textarea>
+
+    </form>
+</body>
+</html>
