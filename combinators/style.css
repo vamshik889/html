@@ -1,0 +1,7 @@
+#container{
+    border: 2px solid;
+}
+
+#container p{  
+    background-color: rgb(241, 241, 96);  /* descendant combinators here eg: id space and tag*/
+}
