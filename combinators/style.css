@@ -5,3 +5,14 @@
 #container p{  
     background-color: rgb(241, 241, 96);  /* descendant combinators here eg: id space and tag*/
 }
+
+h3~p{
+    border: 2px solid rgb(239, 81, 81); /*general sibling*/
+}
+h4+p{
+    font-style: italic;  /* adjacent sibling selector*/
+}
+
+span>p{
+    border: 2px solid rgb(230, 21, 223);  /* child combinator */
+}

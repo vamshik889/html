@@ -9,11 +9,13 @@
 <body>
 
  <!--
+Priority of selectors for styling: universal selector(*) < tag selector < class selector < ID selector < inline styling
+
   combinators   = explains the relation between listed selectors
-                = descendant
-              > = child
-              ~ = general sibling
-              + = adjacent sibling
+                = descendant (multi level down the style will be applied)
+              > = child (only the 1 level child)
+              ~ = general sibling (for all the siblings style will be applied)
+              + = adjacent sibling (for the immidiate sibling style will be applied)
  
  -->
 
@@ -28,8 +30,20 @@
     
     </div>
 
+    <span>
+        <p> para in span tag</p>
+        <span> <div><p>Hello !</p></div></span>
+    </span>
+
     <p>this is #4</p>
     <p>this is #5</p>
+
+    <h4> h4 tag</h4>
+    <p> i'm h5 tag</p>
+
+    <h3> h3 tag</h3>
+    <p>i'm para tag</p>
+    <p>i'm a para of h3 sibling</p>
 
 
 </body>
