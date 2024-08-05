@@ -1,0 +1,51 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+#navbar{
+    border: 1px solid black;
+    margin-top: 10px;
+    
+}
+#nav{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    padding-right: 10px;
+    background-color: rgb(133, 188, 188);
+}
+.logo~div{  
+    border: 1px solid black;
+    padding: 5px;
+    border-radius: 5px;
+
+}
+.logo~div:hover{ 
+   background-color: rgb(94, 41, 227);
+   color: white;
+
+}
+.logo img{
+    height: 60px; /* Change the height as needed */
+    width: 60px; /* Make the width the same as the height */
+    border-radius: 50%; /* Make the image circular */
+    object-fit: cover; /* Ensures the image covers the area without distortion */
+}
+#container{
+    background-color: rgb(175, 213, 247);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.img>img{
+    height: 200px;
+    width: 100%;
+}
+.img{
+    border: 1px solid black;
+    width: 250px;
+    overflow: hidden;
+    box-shadow: 0px 2px 4px rgba(0,0,0,0.2);
+    margin: 20px;
+}
