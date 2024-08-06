@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #buttons{
+            margin-top: 10px;
+            
+        }
+        #buttons>button{
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <input type="number" placeholder="enter 1st number" id="num1" value="">
+    <input type="number" placeholder="enter 2nd number" id="num2" value="">
+    
+    <div id="buttons">
+        <button id="add" onClick="add()">Add</button>
+        <button id="sub" onClick="sub()">Substract</button>
+        <button id="multiply" onClick="multiply()">Multiply</button>
+        <button id="divide" onClick="divide()">Divide</button>
+    </div>
+
+</body>
+</html>
+
+<script>
+    function add(){
+        let sum = Number(document.getElementById("num1").value)+Number(document.getElementById("num2").value)
+        alert(sum);
+    }
+    function sub(){
+        let subtract = Number(document.getElementById("num1").value)-Number(document.getElementById("num2").value)
+        alert(subtract);
+    }
+    function multiply(){
+        let multiplication = Number(document.getElementById("num1").value)*Number(document.getElementById("num2").value)
+        alert(multiplication);
+    }
+    function divide(){
+        let value = Number(document.getElementById("num1").value)/Number(document.getElementById("num2").value)
+        alert(value);
+    }
+
+</script>
