@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button>Click me</button>
+</body>
+</html>
+
+<script>
+    let btn = document.querySelector("button");
+
+    //Syntax: addEventListener is a higher order function which will take 2 arguments 
+     //         1st argument is event and second one is a callback function
+
+    btn.addEventListener("click",myfun);  
+
+    function myfun(){
+        console.log("clicked!");
+    }
+
+</script>

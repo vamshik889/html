@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            height:100px;
+            width: 100px;
+            background-color: teal;
+        }
+    </style>
+</head>
+<body>
+    <div class="div1"></div>
+</body>
+</html>
+<script>
+
+    let box = document.querySelector(".div1");
+    box.addEventListener("mouseenter", enter);
+    
+    function enter(){
+        document.querySelector("div").style.backgroundColor = "red";
+    }
+    box.addEventListener("mouseleave", leave);
+    function leave(){
+        document.querySelector("div").style.backgroundColor = "teal";
+    }
+</script>
