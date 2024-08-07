@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="info"></div>
+</body>
+</html>
+
+<script>
+
+let arr = [
+{name:"vamshi", age: 24 , place: "pocharam"},
+{name:"jagadeesh", age: 24 , place: "pocharam"},
+{name:"sriram", age: 24 , place: "pocharam"}
+
+];
+
+arr.map((element)=>{
+    let heading = document.createElement("h1");
+    heading.innerText = element.name;
+    let location = document.createElement("h4");
+    location.innerText = element.place;
+    let age1 = document.createElement("p");
+    age1.innerText = element.age;
+
+    document.querySelector("#info").append(heading,location,age1);
+
+})
+
+</script>
