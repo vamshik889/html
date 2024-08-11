@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .input-box{
+            margin-top: 10px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <form id="bmiForm">
+        <h1>Check your BMI</h1>
+        <h5>Enter your weight and height below to check your BMI results</h5>
+        <label for="weight">Put Your weight in here (KG)</label> <br>
+        <input type="number" id="weight" class="input-box"> <br>
+        
+        <label for="height">And Your height in here (CM)</label> <br>
+        <input type="number" id="height" class="input-box"> <br> 
+
+        <input type="submit" id="btn" value="calculate BMI">
+    </form>
+
+</body>
+</html>
+
+<script>
+
+    document.querySelector("#bmiForm").addEventListener("submit",bmiResult);
+    
+
+    function bmiResult(){
+        event.preventDefault();
+        let weight = document.querySelector("#weight").value;
+        let height = (document.querySelector("#height").value)/100;
+
+        let bmi = (weight)/(height*height) ;
+
+        let bodytype = "";
+
+        if(bmi<=18.4){
+            bodytype += "Under weight"
+        }
+        else if(bmi>=18.5 && bmi<=29.9){
+            bodytype += "Normal weight"
+        }
+        else if(bmi>=25 && bmi<=29.9){
+            bodytype += "Over weight"
+        }
+        else{
+            bodytype += "Obese"
+        }
+    
+        let h4 = document.createElement("h4");
+        h4.innerText = `Your BMI is ${bmi} which means you are ${bodytype}` ;
+        document.getElementById("bmiForm").append(h4);
+    }
+
+</script>

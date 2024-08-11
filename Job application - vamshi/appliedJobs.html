@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #navbar{
+            display: flex;
+            justify-content:flex-start;
+            gap:10px ;
+            border: 1px solid black;
+            height: 40px;
+            padding-top:20px;
+            padding-left: 10px;
+            background-color: rgb(174, 244, 244);
+            font-size: 20px;
+        }
+        nav>div>a{
+            border: 1px solid black;
+            padding: 3px;
+            color: black;
+            border-radius: 0px;
+            text-decoration: none;
+        }
+        #table{
+            margin-top: 10px;
+        }
+    </style>
+</head>
+ <body>
+    <div >
+        <nav id="navbar">
+            <div><a href="./index.html" >Home</a></div>
+            <div><a href="./appliedJobs.html" target="_blank">Applied jobs</a></div>
+            <div> <a href="./bookmarks.html" target="_blank">Bookmarks</a></div>
+        </nav>
+    </div>
+
+    <main>
+        <table border="1" id="table">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Job applied</th>
+                    <th>Salary expected</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- data will be coming from js  -->
+            </tbody>
+        </table>
+    </main>       
+ </body>
+</html>
+
+<script>
+let jobArr = JSON.parse(localStorage.getItem("jobList"));
+jobArr.forEach(function(element){
+    let tr = document.createElement("tr");
+
+    let td1 = document.createElement("td");
+    td1.innerText = element.personName;
+
+    let td2 = document.createElement("td");
+    td2.innerText = element.personEmail;
+
+    let td3 = document.createElement("td");
+    td3.innerText = element.personRole;
+
+    let td4 = document.createElement("td");
+    td4.innerText = element.personSalary;
+
+    tr.append(td1,td2,td3,td4);
+
+    document.querySelector("tbody").append(tr);
+
+})
+
+</script>

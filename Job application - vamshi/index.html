@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #navbar{
+            display: flex;
+            justify-content:flex-start;
+            gap:10px ;
+            border: 1px solid black;
+            height: 40px;
+            padding-top:20px;
+            padding-left: 10px;
+            background-color: rgb(174, 244, 244);
+            font-size: 20px;
+        }
+        nav>div>a{
+            border: 1px solid black;
+            padding: 3px;
+            color: black;
+            border-radius: 0px;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div >
+        <nav id="navbar">
+            <div><a href="./index.html" >Home</a></div>
+            <div><a href="./appliedJobs.html" target="_blank">Applied jobs</a></div>
+            <div> <a href="./bookmarks.html" target="_blank">Bookmarks</a></div>
+        </nav>
+    </div>
+    <div>
+        <h1>Enter your details here</h1>
+        <form id="form">
+            <input type="text" placeholder="enter name" id="name">
+            <input type="email" placeholder="enter email" id="email">
+            <select name="" id="role">
+                <option value="select role">--select role--</option>
+                <option value="FSD">FSD</option>
+                <option value="Back-end">Backend</option>
+                <option value="Front-end">Front-end</option>
+            </select>
+            <input type="number" value="" id="salary" placeholder="enter expected salary">
+            <input type="submit" id="submit" value="Submit">
+        </form>
+    </div>
+</body>
+</html>
+
+<script>
+document.querySelector("#form").addEventListener("submit",jobsubmit);
+let jobArr;
+//to submit multiple requests every time after refresh of page the local storage will be overridden by empty array, so to store all the resquests we are checking local storage
+if(localStorage.getItem("jobList") !== null){
+    jobArr = JSON.parse(localStorage.getItem("jobList")) //converting the JSON data back to object data as the javascript wont understand the JSON format
+}
+else{
+jobArr = [];
+}
+
+function jobsubmit(){
+    event.preventDefault();
+
+    let jobObj = {
+       personName:  document.querySelector("#name").value,
+       personEmail: document.getElementById("email").value,
+       personRole: document.getElementById("role").value,
+       personSalary : document.getElementById("salary").value
+    };
+    jobArr.push(jobObj);
+    localStorage.setItem("jobList",JSON.stringify(jobArr));
+    //when you want to store the data in localstorage you should alway send the data in json format.
+    window.location.href = "appliedJobs.html"   //after submit to redirect to new page
+}
+
+</script>
