@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table id="users" border="black">
+        <thead>
+            <th>Username</th>
+            <th>Password</th>
+            <th>Valid user</th>
+            <th>last login</th>
+        </thead>
+        <tbody>
+            <!-- data will be coming from js  -->
+        </tbody>
+
+    </table>
+
+</body>
+</html>
+
+<script>
+let arr = JSON.parse(localStorage.getItem("users"));
+arr.forEach(element => {
+   let row =  document.createElement("tr");
+   let td1 = document.createElement("td");
+   let td2 = document.createElement("td");
+   let td3 = document.createElement("td");
+   let td4 = document.createElement("td");
+   td1.innerText = element.username;
+   td2.innerText = element.password;
+   td3.innerText = element.validUser;
+   td4 .innerText = element.lastLogin;
+   row.append(td1,td2,td3,td4);
+   document.querySelector("tbody").append(row);
+});
+
+</script>

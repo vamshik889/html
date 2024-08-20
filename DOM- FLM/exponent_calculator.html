@@ -83,7 +83,7 @@ function myfun(){
     else if(event.target.innerText == "exponent"){
         let numArray = bag.split("");
         console.log(numArray)
-        let num1 = Number(numArray[0]);
+        let num1 = Number(numArray[0]);  //user enters a num example" 45 , we need to find the 4 times of 5
         let num2 = Number(numArray[1]);
         let res = 1;
         for(let i = 1;i<=num2;i++){
@@ -94,7 +94,7 @@ function myfun(){
     else{
         bag+=event.target.innerText;
     }
-    document.querySelector("#display").innerText = bag;
+    document.querySelector("#display").innerText = bag; // to show the number entered in the display box 
     
 }
 
