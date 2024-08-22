@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+//reject-->error
+  //resolve--> result (data)
+
+  //   let promiseOutPut = new Promise((resolve, reject) => {
+  //     reject("this is reject example"); // no asychronous code.
+  //   });
+
+  //   //handling promise
+  //   //2 methods which we chain to the promise object;
+  //   // promiseOutPut.then().catch()
+
+  //   //1. then() callback--> handle the resolved state.
+  //   //2. catch() callback--> handle the reject state.
+
+  //   promiseOutPut
+  //     .then((result) => {
+  //       console.log("result", result);
+  //     })
+  //     .catch((error) => {
+  //       console.log("error", error);
+  //     });
+
+  //1. declare the promise.
+
+  let promise1 = new Promise((resolve, reject) => {
+    //asynchronous
+    setTimeout(() => {
+      reject("no data"); // me creating reject part.
+    }, 5000);
+  });
+
+  console.log(promise1);
+  //2. handle the promise
+  promise1.then().catch((rejectValue) => {
+    console.log("rejectValue", rejectValue);
+  });
+
+  setTimeout(() => {
+    console.log(promise1);
+  }, 6000);
+</script>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+</html>
+
+<script>
+  let newPromise = new Promise(function (resolve, reject) {
+    setTimeout(() => resolve(1), 1000);
+  });
+
+  newPromise
+    .then((a) => {
+      alert(a); //1
+      return a * 2; //default resolve.
+      //1*2=2
+      // this return status creates another new promise
+    })
+    .then(function (b) {
+      alert(b); //2
+      return new Promise((resolve, reject) => {
+        reject("this is error");
+      });
+    })
+    .then(function (result) {
+      alert(result); //4
+    })
+    .catch((error) => {
+      alert(error);
+    });
+</script>

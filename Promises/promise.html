@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+
+<script>
+
+let bike = true;
+let promise1 = new Promise((resolve,reject)=>{  //creating the promise
+    setTimeout(()=>{
+        if(bike){
+        resolve("bike");
+    }
+    else{
+        reject("rejected")
+    }
+
+    },1000);
+    
+})
+
+promise1                         //handling the promise
+    .then((result)=>{
+        alert(result);
+    }) 
+    .catch((result)=>{
+        alert(result);
+
+    })             
+
+</script>

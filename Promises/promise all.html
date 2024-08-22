@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+
+<script>
+
+      //#promise all
+
+  // --> to handle multiple promises together.
+  // --> the promise will be resolved, if all the promises inside it are resolved, else it will be reject
+  
+let prom1 = new Promise((resolev,reject)=>{
+    setTimeout(()=>{
+        resolve("Resolved");
+    },2000)
+});
+let prom2 = new Promise((resolve,reject)=>{
+    setTimeout(()=>{
+        reject("Rejected");
+    })
+})
+
+let promiseArr = [prom1,prom2];
+
+Promise.all(promiseArr)
+    .then((result)=>{
+        alert(result);
+    })
+    .catch((result)=>{
+        alert(result);
+    })
+    .finally((result)=>{
+        alert("From finally");
+    })
+
+</script>

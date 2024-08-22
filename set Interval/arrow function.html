@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>hi</div>
+</body>
+</html>
+<script>
+    let multiply = (x,y)=>x*y;
+    let square = (x)=>multiply(x,x);
+    let rightAngle = (a,b,c)=>{
+        return square(a)+square(b) === square(c);
+    }
+    let res = rightAngle(3,4,5);
+    console.log(res);
+    
+</script>
