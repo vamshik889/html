@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+
+<script>
+
+let grandfather = {
+    name: "kk",
+    lastName: "Dm",
+    age: 99,
+    bloodGroup: "A+"
+};
+
+// Using Object.create() to create a new object `father` that inherits properties from `grandfather`
+let father = Object.create(grandfather);
+
+// Modifying some properties in the `father` object
+father.name = "BB";
+father.age = 55;
+
+console.log(father.bloodGroup); // Output: A+
+// Even though `bloodGroup` is not directly on `father`, it is inherited from `grandfather`
+
+console.log(grandfather.__proto__); 
+// Output: {} (the prototype of `grandfather` is `Object.prototype`)
+
+// Creating a `son` object that inherits from `father`, thus creating a prototype chain
+let son = Object.create(father);
+
+// Exploring the prototype chain of the `son` object
+console.log(son.__proto__); // Output: `father` object
+console.log(son.__proto__.__proto__); // Output: `grandfather` object
+console.log(son.__proto__.__proto__.__proto__); // Output: `Object.prototype` (the root of all objects)
+console.log(son.__proto__.__proto__.__proto__.__proto__); // Output: null (end of the prototype chain)
+
+</script>

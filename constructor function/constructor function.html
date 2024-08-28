@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+
+<script>
+//constructor function is used to create the custom objects
+
+function myObj(name,age,roll){
+    this.name = name;
+    this.age = age;
+    this.roll = roll;
+}
+
+let obj1 = new myObj("vamshi",24,"33");
+console.log(obj1);
+
+
+let obj3 = {
+    name:"vk",
+    age:25,
+    batch:"flm-2"
+}
+
+let obj4 = {   //so if we have same key and value in an object like batch here, we can hard code it in the constructor function so that we can create custom objects directly with the same properties
+    name:"vk",
+    age:25,
+    batch:"flm-2"
+}
+
+function customObj(name,age){
+    this.name = name;
+    this.age = age;
+    this.batch = "flm-2";
+}
+
+let obj5 = new customObj("kk",33);
+console.log(obj5.batch);  //flm-2
+
+
+</script>

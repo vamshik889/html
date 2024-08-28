@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+
+// Adding new properties to existing objects using call, apply, and bind methods
+
+let obj1 = {
+    name: "vamshi",
+    age: 24
+};
+
+let obj2 = {
+    name: "jag",
+    age: 24
+};
+
+let obj3 = {
+    name: "sri",
+    age: 25
+};
+
+// Function to add properties (city and state) to the objects
+function param(city, state) {  
+    this.city = city;
+    this.state = state;
+}
+
+// Using call method to add properties to obj1
+// call syntax: functionName.call(object, arg1, arg2, ...)
+// 'call' immediately invokes the function, with 'this' set to the object provided (obj1 in this case)
+param.call(obj1, "Hyd", "Telangana");
+console.log(obj1.city);  // Output: Hyd
+
+// Using apply method to add properties to obj2
+// apply syntax: functionName.apply(object, [argArray])
+// 'apply' is similar to 'call', but arguments are passed as an array
+param.apply(obj2, ["Warangal", "TG"]);
+console.log(obj2.city);  // Output: Warangal
+
+// Using bind method to prepare a function that can later be invoked to add properties to obj3
+// bind syntax: functionName.bind(object, arg1, arg2, ...)
+// 'bind' does not immediately invoke the function; it returns a new function that can be called later
+let fun = param.bind(obj3, "vizag", "Ap");
+fun();  // The returned function is called, applying the bound context and arguments
+console.log(obj3.city);  // Output: vizag
+
+
+</script>

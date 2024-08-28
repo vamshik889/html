@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <form  id="form">
+            <input type="text" placeholder="Product name" id="name">
+            <select name="" id="category">
+                <option value="">--select category</option>
+                <option value="">Mobiles</option>
+                <option value="">Laptops</option>
+            </select>
+            <input type="text" id="img" placeholder="image URL">
+            <input type="text" id="price" placeholder="price">
+            <select name="" id="gender">
+                <option value="">Gender</option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+                <option value="Other">Other</option>
+            </select>
+
+            <label for="sold">Sold:</label>
+
+            <select name="" id="sold">
+                <option value="False">False</option>
+                <option value="True">True</option>
+            </select>   
+
+            <input type="submit" id="add">
+         </form>
+    </div>
+</body>
+</html>
+
+<script>
+
+ document.querySelector("#form").addEventListener("submit",myfun);
+ let productsArr;
+ if(localStorage.getItem("Products")!==null){
+    productsArr = JSON.parse(localStorage.getItem("Products"))
+ }
+ else{
+    productsArr = [];
+ }
+
+ function myfun(){
+    event.preventDefault();
+
+    let product = document.getElementById("name").value;
+    let category = document.getElementById("category").value;
+    let image = document.getElementById("img").value;
+    let price = document.getElementById("price").value;
+    let gender = document.getElementById("gender").value;
+    let sold = document.getElementById("sold").value;
+
+    function constructfun(productName,category,image,price,gender,sold){
+        this.productName = productName;
+        this.category = category;
+        this.image = image;
+        this.price = price;
+        this.gender = gender;
+        this.sold = sold;
+    }
+    let obj = new constructfun(product,category,image,price,gender,sold);
+    productsArr.push(obj);
+    localStorage.setItem("Products",JSON.stringify(productsArr));
+    document.querySelector("#form").reset();
+
+    }
+</script>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+
+<script>
+
+    let grandfather = {
+        name:"kk",
+        lastName:"Dm" ,
+        age:99,
+        bloodGroup: "A+",
+    }
+
+
+    //to create a new object by inheriting the properties from any other object, will use the Object.create()
+
+    let father = Object.create(grandfather);  //creating the father object with same properties of grandfather object
+
+    father.name = "BB";
+    father.age = 55;
+
+    console.log(father.bloodGroup); // A+
+
+    console.log(grandfather.__proto__);
+
+
+    let son = Object.create(father);
+
+
+</script>
