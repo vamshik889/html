@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+
+<script>
+
+    //Problem: create a prototype for constructor function1 and access that from constructor function using setPrototypeOf() method
+
+    function con1(name,age){  //constructor function1 
+        this.name = name;
+        this.age = age;
+    }
+
+    con1.prototype.country = "India";
+
+    function con2(college,roll){ //constructor function2
+        this.college = college;
+        this.roll = roll;
+    }
+    Object.setPrototypeOf(con2.prototype,con1.prototype);  // we set the con2 prototype as con1
+
+    let obj1 = new con2("KITS","B18CE121L");
+    console.log(obj1.country);  //accessing the country from con1 prototype from the object created with con2 
+
+</script>

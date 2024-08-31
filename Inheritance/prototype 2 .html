@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+
+<script>
+
+let obj2 = {        
+    name:"vk",
+    age: 24
+}
+let obj3 = Object.create(obj2);  //here the prototype of obj3 is obj2 
+obj3.village = "Pocharam";
+   
+
+function constr(name,age){
+    this.name = name;
+    this.age = age;
+}
+
+let obj1 = new constr("vamshi",24);
+ 
+constr.prototype.country = "India";              //we will use constructor function if we wanted to connect prototype before creating an object
+constr.prototype.getDetails = function(){
+console.log(`Name is ${this.name} and age is ${this.age}`  );
+}
+
+obj1.getDetails();
+
+console.log(obj1);
+
+console.log(obj1.hasOwnProperty("name"));//true
+console.log(obj1.hasOwnProperty("country")); //false: as the obj1 doesn't have this property directly, it's prototype has this property hence false
+
+
+</script>

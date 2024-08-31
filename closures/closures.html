@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+
+<script>
+
+    /*Closures in JavaScript let a function keep using variables,parameters from its parent function even after the parent has finished running. 
+    This is useful for things like keeping data private or remembering information over time.*/
+
+    function outer(batch){
+        let name = "vamshi";
+        return function inner(){
+            console.log(name+" "+batch);
+        }
+    }
+    let res = outer("FLM");
+    res();
+
+
+</script>

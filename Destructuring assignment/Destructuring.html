@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+
+<script>
+
+    /*The destructuring assignment syntax is a JavaScript expression that makes it possible to 
+     unpack values from arrays, or properties from objects, into distinct variables.*/
+
+
+    let a, b, rest;
+    [a, b] = [10, 20];
+
+    console.log(a);
+    // Expected output: 10
+
+    console.log(b);
+    // Expected output: 20
+
+    [a, b, ...remaining] = [10, 20, 30, 40, 50];
+
+    console.log(remaining);
+    // Expected output: Array [30, 40, 50]
+
+    const x = [1, 2, 3, 4, 5];
+    const [y, z] = x;
+    console.log(y); // 1
+    console.log(z); // 2
+
+    const obj = { c: 1, d: 2 };
+    const { c, d } = obj;
+    // is equivalent to:
+    // const c = obj.c;
+    // const d = obj.d;
+
+
+
+
+
+</script>
