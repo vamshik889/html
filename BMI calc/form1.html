@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form id="form1">
+
+        <label for="name"></label>
+        <input type="text" id="name" required placeholder="Username">
+        <label for="email"></label>
+        <input type="email" placeholder="email" required id="email">
+        <label for="password"></label>
+        <input type="password" placeholder="password" id="password" required>
+        <input type="submit">
+    </form>
+</body>
+</html>
+
+<script>
+
+    document.getElementById("form1").addEventListener("submit",myfun);
+    let objArr;
+    if(localStorage.getItem("UserDetails")!==null){
+        objArr = JSON.parse(localStorage.getItem("UserDetails"))
+    }
+    else{
+        objArr = [];
+    }
+
+    function myfun(){
+        event.preventDefault();
+        let userName = document.getElementById("name").value;
+        let email = document.getElementById("email").value;
+        let password = document.getElementById("password").value;
+
+        function constr(name,email,password){
+            this.name = name;
+            this.email = email;
+            this.password = password;
+        }
+
+    let obj = new constr(userName,email,password);
+    objArr.push(obj);
+    localStorage.setItem("UserDetails",JSON.stringify(objArr)); 
+    document.querySelector("#form1").reset();
+    
+    }
+</script>

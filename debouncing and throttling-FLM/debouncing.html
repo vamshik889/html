@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input type="text" oninput="onSearchInput()" />
+    <!-- abc -->
+  </body>
+</html>
+
+<script>
+  function debounce(FetchData, delay) {
+    let timeoutId; // setTimeout id; 2
+
+    return function (arg) {
+      // arg= abc
+      clearTimeout(timeoutId); // it will clear the id (2)
+
+      timeoutId = setTimeout(() => {
+        // timderId= 3 as an example
+        FetchData(arg); //abc
+      }, delay); //5000
+    }; // inner function
+  }
+
+  function FetchData(query) {
+    console.log(`Processing search Query ${query}`);
+  }
+
+  const debouncedProcessSearchQuery = debounce(FetchData, 5000);
+
+  function onSearchInput() {
+    const query = event.target.value; //abc
+    debouncedProcessSearchQuery(query); //query=abc;
+  }
+</script>
+a--->timer -->1 --> 0-1-2-3-4 ab--->timer-->2 --->0-1
